@@ -28,11 +28,11 @@ fi
 export AWS_REGION=${region}
 
 #AWS_CLI_PROFILE="awb-user"
-#BUCKET="s3://${s3_deploy_bucket}" # The bucket name created in infrastructure-bucket-deploy.sh should go here
+BUCKET="s3://${s3_deploy_bucket}" # The bucket name created in infrastructure-bucket-deploy.sh should go here
 STACK_NAME="${env}-collections-vpc-infrastructure"
 CF_TEMPLATE="./templates/vpc-infrastructure-template.yaml"
 TEMPLATE_BUCKET_URL="http://${s3_deploy_bucket}.s3.amazonaws.com"
-ORGANIZATION_NAME="Seerist"
+ORGANIZATION_NAME="Geospark"
 APPLICATION_NAME="collections"
 ENVIRONMENT_NAME=${env}
 VPC_CIDR=${vpc_cidr}
@@ -73,4 +73,5 @@ VpcCIDR=$VPC_CIDR \
 PublicSubnet1CIDR=$PUBLIC_SUBNET_1_CIDR PrivateSubnet1CIDR=$PRIVATE_SUBNET_1_CIDR \
 PublicSubnet2CIDR=$PUBLIC_SUBNET_2_CIDR PrivateSubnet2CIDR=$PRIVATE_SUBNET_2_CIDR \
 PublicSubnet3CIDR=$PUBLIC_SUBNET_3_CIDR PrivateSubnet3CIDR=$PRIVATE_SUBNET_3_CIDR \
+VpcPeerConnectionId=$VPC_PEER_CONNECTION_ID VpcPeerConnectionCIDR=$VPC_PEER_CONNECTION_CIDR \
 --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND
