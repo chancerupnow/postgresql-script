@@ -43,6 +43,10 @@
 #VPC_PEER_CONNECTION_ID=${vpc_peer_connection_id}
 #VPC_PEER_CONNECTION_CIDR="172.31.0.0/16" # For the Geospark account VPC
 
+###########################################################
+# Changeable variables
+# - Do not change TEMPLATE_FILE
+###########################################################
 TEMPLATE_FILE="./templates/rds-postgresql.template.yaml"
 STACK_NAME="postgresql-db"
 VPCID="vpc-0dc3bd30cd4efca3e"
