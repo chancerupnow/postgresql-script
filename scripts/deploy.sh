@@ -55,6 +55,7 @@ DATABASE_MASTER_PASSWORD="Pass1word#"
 DATABASE_STORAGE_TYPE="gp3"
 DATABASE_ALLOCATED_STORAGE_SIZE_IN_GIB="300"
 SNS_NOTIFICATION_EMAIL="chance.rupnow@seerist.com"
+REGION="us-west-2"
 
 ###########################################################
 # Upload nested stacks to S3 bucket.
@@ -65,7 +66,7 @@ SNS_NOTIFICATION_EMAIL="chance.rupnow@seerist.com"
 ###########################################################
 # Deploy/update Infrastructure Stack
 ###########################################################
-echo "[${AWS_REGION}]> Deploying ${STACK_NAME} to ${AWS_REGION}"
+echo "[${REGION}]> Deploying ${STACK_NAME} to ${REGION}"
 # aws cloudformation deploy --template-file $CF_TEMPLATE  --stack-name $STACK_NAME\
 #   --parameter-overrides TemplateBucketUrl=$TEMPLATE_BUCKET_URL OrganizationName=$ORGANIZATION_NAME\
 #   EnvironmentName=$ENVIRONMENT_NAME ApplicationName=$APPLICATION_NAME UiDomainName=$UI_DOMAIN_NAME\
@@ -86,3 +87,4 @@ Subnet2ID=$PRIVATE_SUBNET_2_ID Subnet3ID=$PRIVATE_SUBNET_3_ID \
 DBName=$DATABASE_NAME DBMasterUsername=$DATABASE_MASTER_USERNAME \
 DBMasterUserPassword=$DATABASE_MASTER_PASSWORD DBStorageType=$DATABASE_STORAGE_TYPE \
 DBAllocatedStorage=$DATABASE_ALLOCATED_STORAGE_SIZE_IN_GIB NotificationList=$SNS_NOTIFICATION_EMAIL \
+Region=$REGION \
